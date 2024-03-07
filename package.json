@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "nodetopy": "^1.0.1",
+    "nodetopy3": "^1.0.1",
+    "piscina": "^4.4.0"
+  }
+}
