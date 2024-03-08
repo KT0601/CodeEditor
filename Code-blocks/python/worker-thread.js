@@ -1,9 +1,11 @@
 import runPythonCode from './Exexute.js';
 import { parentPort, workerData } from "worker_threads";
 
-async function run_worker(file1, id) {
+async function run_worker(file1,file2, id) {
     try {
-        const stdout = await runPythonCode(file1, id);
+        console.log(file1,file2,id)
+
+        const stdout = await runPythonCode(file1,file2, id);
         console.log(stdout);
         parentPort.postMessage(stdout);
     } catch (error) {
@@ -11,4 +13,4 @@ async function run_worker(file1, id) {
     }
 }
 
-run_worker(workerData.a, workerData.c);
+run_worker(workerData.a,workerData.b, workerData.c);

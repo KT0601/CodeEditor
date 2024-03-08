@@ -5,8 +5,8 @@ import fs from 'fs';
 
 const threads = [];
 
-function createCppWorker(id, file1) {
-    const worker = new Worker("./Code-blocks/cpp/worker-thread.js", { workerData: { a: file1, c: id } });
+function createCppWorker(id, file1,file2) {
+    const worker = new Worker("./Code-blocks/cpp/worker-thread.js", { workerData: { a: file1,b:file2, c: id } });
 
     worker.on('message', (message) => {
         console.log(`Thread ${id} received message: ${message}`);

@@ -1,10 +1,9 @@
 import { exec } from 'child_process';
-
-// Function to run Python code from a source file
-async function runPythonCode(sourceFile, id) {
+// Function to run Python code from a source file with an input file
+async function runPythonCode(sourceFile, inputFile,id) {
     return new Promise((resolve, reject) => {
         try {
-            exec(`python ${sourceFile}`, (error, stdout, stderr) => {
+            exec(`python ${sourceFile} < ${inputFile}`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Error running Python script: ${error.message}`);
                     reject(error);
