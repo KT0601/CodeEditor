@@ -8,8 +8,6 @@
     "mongoose": "^8.2.1",
     "nodemailer": "^6.9.11",
     "nodemon": "^3.1.0",
-    "nodetopy": "^1.0.1",
-    "nodetopy3": "^1.0.1",
     "piscina": "^4.4.0"
   },
   "name": "codeeditor",

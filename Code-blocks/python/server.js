@@ -2,8 +2,8 @@ import { Worker } from "worker_threads";
 
 const threads = [];
 
-function createPythonWorker(id, file1) {
-    const worker = new Worker("./Code-blocks/python/worker-thread.js", { workerData: { a: file1, c: id } });
+function createPythonWorker(id, file1,file2) {
+    const worker = new Worker("./Code-blocks/python/worker-thread.js", { workerData: { a: file1, b:file2,c: id } });
 
     worker.on('message', (message) => {
         console.log(`Thread ${id} received message: ${message}`);
